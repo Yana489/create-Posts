@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.main-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.posts-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-list-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+}
+
+.post-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.post-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.post-details-main-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.post-details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.post-details-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-details-body {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.post-details-author {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 60px;
+}
+
+.share-post-text {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.share-post {
+  display: flex;
+  gap: 10px;
+}
+.whatsapp,
+.telegram {
+  width: 30px;
+  cursor: pointer;
+}
+
+.comments-wrapper {
+  width: 80%;
+  max-width: 650px;
+  margin: 50px auto;
+}
+
+.comments-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-input-name,
+.comment-input-email,
+.comment-input-text {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #90b0b5;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #30363d;
+}
+
+.post-details-comments {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+.comment-item:last-child {
+  margin-bottom: 40px;
+}
+
+.comment-item strong {
+  font-size: 16px;
+  color: #333;
+}

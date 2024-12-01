@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Post details</title>
+  </head>
+  <body>
+    <h2 class="post-details-main-title">Post Details</h2>
+    <div class="post-details">
+      <h3 class="post-details-title"></h3>
+      <p class="post-details-body"></p>
+      <p class="post-details-author"></p>
+      <p class="share-post-text">Share with friends:</p>
+      <div class="share-post">
+        <img class="telegram" src="images/icons/telegram.png" alt="Telegram" />
+        <img class="whatsapp" src="images/icons/whatsapp.png" alt="whatsapp" />
+      </div>
+    </div>
+    <div class="comments-wrapper">
+      <h4 class="comments-title">Comments to the post</h4>
+      <ul class="post-details-comments"></ul>
+      <form>
+        <input type="text" class="comment-input-name" placeholder="Your name" />
+        <input
+          type="email"
+          class="comment-input-email"
+          placeholder="Your e-mail"
+        />
+        <textarea
+          class="comment-input-text"
+          placeholder="Your comment"
+          rows="5"
+        ></textarea>
+      </form>
+      <button class="comment-button">Send</button>
+    </div>
+    <script src="js/post-details.js"></script>
+  </body>
+</html>
