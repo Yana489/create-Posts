@@ -80,9 +80,9 @@ telegramImg.addEventListener("click", shareTelegram);
 whatsappImg.addEventListener("click", shareWhatsapp);
 
 function shareTelegram() {
-  window.open("https://telegram.me/share/url?url=https://t.me/YS2022A");
+  window.open("https://telegram.me/share/url?url=http://127.0.0.1:5500/post-details.html?id=1");
 }
 
-function shareWhatsapp() {
-  window.open("https://api.whatsapp.com/send?phone=49157731279");
-}
+// function shareWhatsapp() {
+//   window.open("https://api.whatsapp.com/send?phone=49157731279");
+// }

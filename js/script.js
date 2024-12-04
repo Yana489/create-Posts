@@ -2,48 +2,44 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   .then((response) => response.json())
   .then((json) => {
     const list = document.querySelector(".posts-list");
-    for (let i = 0; i < json.length; i++) {
-      const post = document.createElement("li");
-      post.classList.add("post-list-item");
-      const postTitle = document.createElement("a");
-      postTitle.classList.add("post-title");
-      postTitle.setAttribute("href", `post-details.html?id=${json[i].id}`);
-      postTitle.setAttribute("target", "_blank");
-      postTitle.innerHTML = json[i].title;
-      const postText = document.createElement("p");
-      postText.classList.add("post-text");
-      postText.innerHTML = json[i].body.substring(0, 50) + "...";
+    const searchOfPostsInput = document.querySelector(".search-post");
+    
+    function displayPosts(json) {
+      list.innerHTML = "";
+      for (let i = 0; i < json.length; i++) {
+        const post = document.createElement("li");
+        post.classList.add("post-list-item");
+        const postTitle = document.createElement("a");
+        postTitle.classList.add("post-title");
+        postTitle.setAttribute("href", `post-details.html?id=${json[i].id}`);
+        postTitle.setAttribute("target", "_blank");
+        postTitle.innerHTML = json[i].title;
+        const postText = document.createElement("p");
+        postText.classList.add("post-text");
+        postText.innerHTML = json[i].body.substring(0, 50) + "...";
 
-      post.append(postTitle, postText);
-      list.appendChild(post);
+        post.append(postTitle, postText);
+        list.appendChild(post);
+      }
+    }
+    displayPosts(json);
 
+    searchOfPostsInput.addEventListener("input", searchOfPosts);
 
-      // let searchOfPostsInput = document.querySelector(".search-post");
-      
-      // searchOfPostsInput.addEventListener("input", searchOfPosts);
-
-      // function searchOfPosts(query) {
-      //   return
-      //   json.filter(function(el)
-      //   {
-      //     return
-      //     el.toLowerCase().indexOf(query.toLowerCase()) > -1; 
-      //   })
-      //   console.log(searchOfPosts(query))
-      // }
+    function searchOfPosts() {
+      if (searchOfPostsInput.value.length > 2) {
+        const filteredPosts = json.filter(
+          (json) =>
+            json.title
+              .toLowerCase()
+              .includes(searchOfPostsInput.value.toLowerCase()) ||
+            json.body
+              .toLowerCase()
+              .includes(searchOfPostsInput.value.toLowerCase())
+        );
+        displayPosts(filteredPosts);
+      } else {
+        displayPosts(json);
+      }
     }
   });
-
-  let searchOfPostsInput = document.querySelector(".search-post");
-  searchOfPostsInput.addEventListener("input", searchOfPosts);
-
-  function searchOfPosts(myquery){
-    fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((response) => response.json())
-  .then((json) => {
-    for (let i = 0; i < json.length; i++) {
-    return json[i].filter(function(el){
-      return el.toLowerCase().indexOf(myquery.toLowerCase()) > -1;
-    })
- } })
-  }

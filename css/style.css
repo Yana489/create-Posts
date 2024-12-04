@@ -1,15 +1,26 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
 }
 
-.main-title {
+.main-title,
+.post-details-main-title {
   text-align: center;
-  margin: 20px 0;
-  font-size: 24px;
-  color: #333;
+  color: #052e5d;
+}
+
+.search-post{
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+}
+
+.search-post:focus {
+  border-color: #aec7e2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(116, 138, 162, 0.5);
 }
 
 .posts-list {
@@ -30,26 +41,21 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 600px;
-  transition: transform 0.3s ease;
 }
 
-.post-title {
-  font-size: 18px;
+.post-title,
+.post-details-title,
+.comments-title {
+  text-decoration: none;
+  color: #052e5d;
+  font-size: 20px;
   margin-bottom: 10px;
-  display: block;
 }
 
-.post-text {
-  font-size: 16px;
+.post-text,
+.post-details-body {
   color: #555;
   line-height: 1.5;
-}
-
-.post-details-main-title {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 24px;
-  color: #333;
 }
 
 .post-details {
@@ -63,19 +69,6 @@ body {
   max-width: 600px;
 }
 
-.post-details-title {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.post-details-body {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
 .post-details-author {
   font-size: 14px;
   color: #777;
@@ -83,13 +76,16 @@ body {
 }
 
 .share-post-text {
+  color: #555;
   font-size: 14px;
   margin-bottom: 7px;
 }
+
 .share-post {
   display: flex;
   gap: 10px;
 }
+
 .whatsapp,
 .telegram {
   width: 30px;
@@ -97,22 +93,29 @@ body {
 }
 
 .comments-wrapper {
-  width: 80%;
-  max-width: 650px;
+  width: 70%;
+  max-width: 640px;
   margin: 50px auto;
 }
 
-.comments-title {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
+.add-comment-text {
+  margin-bottom: 0;
+  color: #052e5d;
 }
 
-form {
+.add-comment {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
+}
+
+.comment-input-name:focus,
+.comment-input-email:focus,
+.comment-input-text:focus {
+  border-color: #aec7e2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(116, 138, 162, 0.5);
 }
 
 .comment-input-name,
@@ -121,23 +124,23 @@ form {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
   color: #555;
+  resize: none;
 }
 
-button {
+.comment-button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #90b0b5;
+  background-color: #7b97b3;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #30363d;
+.comment-button:hover {
+  background-color: #506074;
 }
 
 .post-details-comments {
@@ -162,5 +165,5 @@ button:hover {
 
 .comment-item strong {
   font-size: 16px;
-  color: #333;
+  color: #052e5d;
 }
