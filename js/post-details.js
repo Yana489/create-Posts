@@ -8,6 +8,12 @@ function showPostDetails() {
   let postDetailsText = document.querySelector(".post-details-body");
   let postAuthor = document.querySelector(".post-details-author");
   let postComments = document.querySelector(".post-details-comments");
+  let inputUserName = document.querySelector(".comment-input-name");
+  let inputUserEmail = document.querySelector(".comment-input-email");
+  let inputUserComment = document.querySelector(".comment-input-text");
+  let sendCommentButton = document.querySelector(".comment-button");
+  let telegramImg = document.querySelector(".telegram");
+  let whatsappImg = document.querySelector(".whatsapp");
 
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then((response) => response.json())
@@ -34,11 +40,6 @@ function showPostDetails() {
         postComments.appendChild(commentItem);
       }
     });
-
-  let inputUserName = document.querySelector(".comment-input-name");
-  let inputUserEmail = document.querySelector(".comment-input-email");
-  let inputUserComment = document.querySelector(".comment-input-text");
-  let sendCommentButton = document.querySelector(".comment-button");
 
   sendCommentButton.addEventListener("click", sendComment);
 
@@ -71,18 +72,19 @@ function showPostDetails() {
       inputUserComment.value = "";
     }
   }
+
+  telegramImg.addEventListener("click", shareTelegram);
+  whatsappImg.addEventListener("click", shareWhatsapp);
+
+  function shareTelegram() {
+    window.open(
+      `https://telegram.me/share/url?url=http://127.0.0.1:5500/post-details.html?${postId}`
+    );
+  }
+
+  function shareWhatsapp() {
+    window.open(
+      `https://web.whatsapp.com/send?url=http://127.0.0.1:5500/post-details.html?${postId}`
+    );
+  }
 }
-
-let telegramImg = document.querySelector(".telegram");
-let whatsappImg = document.querySelector(".whatsapp");
-
-telegramImg.addEventListener("click", shareTelegram);
-whatsappImg.addEventListener("click", shareWhatsapp);
-
-function shareTelegram() {
-  window.open("https://telegram.me/share/url?url=http://127.0.0.1:5500/post-details.html?id=1");
-}
-
-// function shareWhatsapp() {
-//   window.open("https://api.whatsapp.com/send?phone=49157731279");
-// }
